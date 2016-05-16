@@ -127,6 +127,18 @@ module.exports = function(grunt) {
 
 					} // Target-specific arguments
 				}
+			},
+			travis: {
+				options: {
+					configFile: 'test/e2e.conf.js', // Target-specific config file
+					args: {
+						baseUrl : "http://localhost:<%= connect.test.options.port%>",
+						capabilities: {
+							browserName: "firefox",
+						}
+
+					} // Target-specific arguments
+				}
 			}
 		}
 	});
@@ -138,7 +150,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('build', ['clean', 'concat', 'jshint:all', 'uglify', 'less']);
 	
 	// Test task
-	grunt.registerTask('ci', ['connect:test', 'karma:travis', 'protractor:e2e']);
+	grunt.registerTask('ci', ['connect:test', 'karma:travis', 'protractor:travis']);
 
 	// Default task (i.e. 'grunt')
 	grunt.registerTask('default', ['test', 'build']);
