@@ -1,4 +1,4 @@
-so-multiselect
+so-multiselect [![Build Status](https://travis-ci.org/gordonmcg-sonalake/so-multiselect.svg?branch=master)](https://travis-ci.org/gordonmcg-sonalake/so-multiselect) [![codecov coverage](https://img.shields.io/codecov/c/github/gordonmcg-sonalake/so-multiselect.svg?style=flat-square)](https://codecov.io/github/gordonmcg-sonalake/so-multiselect) [![MIT License](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)]()
 ================
 > Angular module that provides a multi-select dropdown list using checkboxes.
 
