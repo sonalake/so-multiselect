@@ -1,0 +1,33 @@
+{
+  "name": "so-multiselect",
+  "version": "0.1",
+  "main": "dist/so-multiselect.js",
+  "private": true,
+  "dependencies": {
+    "angular": "1.2.28"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.2.28",
+    "angular-scenario": "1.2.28",
+    "jquery": "~1.10.2",
+    "jasmine-jquery": "1.7.0"
+  },
+  "ignore": [
+    "**/.*",
+    ".sass_cache",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "bower.json",
+    "Gruntfile.js",
+    "package.json",
+    "README.md",
+    "src/helpers",
+    "src/js",
+    "src/vendor"
+  ],
+  "resolutions": {
+    "jquery": "~1.10.2"
+  }
+}

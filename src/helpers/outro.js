@@ -1,0 +1,2 @@
+
+})(window, window.$, window.angular);

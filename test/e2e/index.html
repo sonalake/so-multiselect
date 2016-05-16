@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Sonalake Multi-Select Demo</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/so-multiselect.css" />
+		<style>
+			.btn-grey {
+				color: #333;
+				background: #f2f2f2;
+				background: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 100%);
+				border-color: #ccc;
+			}
+
+			.btn-grey:hover, .btn-grey:focus, .btn-grey:active, .btn-grey.active {
+				background: #f7f7f7;
+				background: -webkit-linear-gradient(top, #fff 0, #f7f7f7 100%);
+				background: -moz-linear-gradient(top, #fff 0, #f7f7f7 100%);
+				background: -ms-linear-gradient(top, #fff 0, #f7f7f7 100%);
+				background: -o-linear-gradient(top, #fff 0, #f7f7f7 100%);
+				background: linear-gradient(to bottom, #fff 0, #f7f7f7 100%);
+				border-color: #999;
+				color: #000;
+			}
+
+			.btn-grey:focus, .btn-grey:active:focus {
+				outline: 0;
+			}
+		</style>
+	</head>
+	<body ng-app="demo" id="ng-app">
+		<div class="container" ng-controller="DemoCtrl">
+			<div class="page-header">
+				<h1>Sonalake Multi-Select</h1>
+				<p class="lead">Custom AngularJS dropdown selector with checkboxes</p>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<ul class="nav navbar-nav">
+						<li>
+							<div so-multiselect items="things" name="Thing" on-selected="onThingsSelected(selectedItems)" button-class="btn-grey"></div>
+						</li>
+						<li><p class="navbar-text">Items selected: <strong>{{items.length}}</strong></p></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<script src="/vendor/angular/angular.js"></script>
+
+		<script src="/so-multiselect.js"></script>
+
+		<script src="app.js"></script>
+
+		<script>hljs.initHighlightingOnLoad();</script>
+	</body>
+</html>

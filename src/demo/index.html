@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Sonalake Multi-Select Demo</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+		<link rel="stylesheet" href="../../dist/so-multiselect.css" />
+		<style>
+			.code .nav-tabs {
+				border-bottom: 1px solid #ccc;
+			}
+
+			.code pre, .code code {
+				background-color: #f8f8f8;
+				border-top: none;
+				border-top-left-radius: 0;
+				border-top-right-radius: 0;
+			}
+
+			.code .nav-tabs>li.active>a, .code .nav-tabs>li.active>a:hover, .code .nav-tabs>li.active>a:focus {
+				background-color: #f8f8f8;
+				border: 1px solid #ccc;
+				border-bottom-color: transparent;
+			}
+
+			.btn-grey {
+				color: #333;
+				background: #f2f2f2;
+				background: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 100%);
+				border-color: #ccc;
+			}
+
+			.btn-grey:hover, .btn-grey:focus, .btn-grey:active, .btn-grey.active {
+				background: #f7f7f7;
+				background: -webkit-linear-gradient(top, #fff 0, #f7f7f7 100%);
+				background: -moz-linear-gradient(top, #fff 0, #f7f7f7 100%);
+				background: -ms-linear-gradient(top, #fff 0, #f7f7f7 100%);
+				background: -o-linear-gradient(top, #fff 0, #f7f7f7 100%);
+				background: linear-gradient(to bottom, #fff 0, #f7f7f7 100%);
+				border-color: #999;
+				color: #000;
+			}
+
+			.btn-grey:focus, .btn-grey:active:focus {
+				outline: 0;
+			}
+		</style>
+	</head>
+	<body ng-app="demo" id="ng-app">
+		<div class="container" ng-controller="DemoCtrl">
+			<div class="page-header">
+				<h1>Sonalake Multi-Select</h1>
+				<p class="lead">Custom AngularJS dropdown selector with checkboxes</p>
+			</div>
+			<h3>Basic Demo</h3>
+			<p>This is a basic demo set up. It gives a quick example of how to use so-multiselect.</p>
+			<div class="row">
+				<div class="col-xs-12">
+					<ul class="nav navbar-nav">
+						<li>
+							<div so-multiselect items="things" name="Thing" on-selected="onThingsSelected(selectedItems)" button-class="btn-grey"></div>
+						</li>
+						<li><p class="navbar-text">Items selected: <strong>{{items.length}}</strong></p></li>
+					</ul>
+				</div>
+			</div>
+			<hr/>
+			<div class="row">
+				<div class="col-xs-12">
+
+					<div class="code">
+						<ul class="nav nav-tabs">
+							<li ng-class="{'active':demo1.markup}">
+								<a href="#" ng-click="toggleDemo1($event, true)">Markup</a>
+							</li>
+							<li ng-class="{'active':demo1.javascript}">
+								<a href="#" ng-click="toggleDemo1($event, false)">JavaScript</a>
+							</li>
+						</ul>
+
+						<!-- Tab panes -->
+						<div class="tab-content">
+							<div class="tab-pane" ng-class="{'active':demo1.markup}" ng-show="demo1.markup">
+								<pre><code class="html" ng-non-bindable>&lt;div so-multiselect
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;items="things"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="Thing"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;on-selected="onThingsSelected(selectedItems)"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;button-class="btn-grey"
+&gt;&lt;/div&gt;
+&lt;p&gt;Items selected: &lt;strong&gt;{{items.length}}&lt;/strong&gt;&lt;/p&gt;</code></pre>
+							</div>
+							<div class="tab-pane" ng-class="{'active':demo1.javascript}" ng-show="demo1.javascript">
+								<pre><code class="javascript" ng-non-bindable>.controller('DemoCtrl', ['$scope', function ($scope) {
+&nbsp;&nbsp;&nbsp;&nbsp;// the selector config
+&nbsp;&nbsp;&nbsp;&nbsp;$scope.things = [{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key: 't1',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: 'Thing 1'
+&nbsp;&nbsp;&nbsp;&nbsp;}, {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key: 't2',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: 'Thing 2'
+&nbsp;&nbsp;&nbsp;&nbsp;}, {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key: 't3',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: 'Thing 3'
+&nbsp;&nbsp;&nbsp;&nbsp;}];
+
+&nbsp;&nbsp;&nbsp;&nbsp;$scope.items = [];
+
+&nbsp;&nbsp;&nbsp;&nbsp;$scope.onThingsSelected = function(selectedItem) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$scope.items = selectedItem;
+&nbsp;&nbsp;&nbsp;&nbsp;};
+}])</code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="../vendor/angular/angular.js"></script>
+
+		<script src="../../dist/so-multiselect.js"></script>
+
+		<script src="app.js"></script>
+
+		<script>hljs.initHighlightingOnLoad();</script>
+	</body>
+</html>

@@ -1,0 +1,11 @@
+<div class="dropdown-filter">
+	<button class="btn btn-grey transparent dropdown-filter-toggle" ng-click="open=!open">
+		<div class="filter-wrap"><span class="filter-label">{{filterName}}:</span> <span class="filter-values">{{selectedItemsString}}</span></div>
+		<span class="caret" ng-if="filterItems.length > 0"></span>
+	</button>
+	<ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+		<li ng-repeat="item in filterItems" ng-click="selectedItems()">
+			<input type="checkbox" ng-model="item.selected" /><span ng-click="itemSelected($index)">{{item.name}}</span>
+		</li>
+	</ul>
+</div>

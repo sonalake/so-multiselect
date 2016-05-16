@@ -1,0 +1,71 @@
+/*! so-multiselect - 0.1.0 - 2016-04-19
+ * Copyright (c) 2016 Sonalake;
+ */
+.multiselect-container .filter-wrap {
+  text-align: left;
+}
+.multiselect-container .filter-wrap .filter-label {
+  color: #666;
+  float: left;
+}
+.multiselect-container .filter-wrap .filter-values {
+  display: inline-block;
+  float: right;
+  margin-left: 4px;
+  max-width: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.multiselect-container .btn {
+  padding: 6px 22px 6px 8px;
+  position: relative;
+}
+.multiselect-container .btn .caret {
+  color: #333;
+  position: absolute;
+  right: 8px;
+  top: 14px;
+}
+.multiselect-container .multiselect-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  font-size: 14px;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+.multiselect-container .multiselect-menu li {
+  clear: both;
+  color: #333;
+  cursor: pointer;
+  display: block;
+  font-weight: 400;
+  line-height: 1.42857143;
+  padding: 3px 20px 3px 14px;
+  white-space: nowrap;
+}
+.multiselect-container .multiselect-menu li input {
+  margin-right: 6px;
+}
+.multiselect-container .multiselect-menu li:hover,
+.multiselect-container .multiselect-menu li:focus {
+  background-color: #f5f5f5;
+}
+.multiselect-container.open .multiselect-menu {
+  display: block;
+}
