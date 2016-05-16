@@ -1,0 +1,24 @@
+sudo: false
+language: node_js
+cache:
+  directories:
+    - node_modules
+branches:
+  only:
+    - master
+notifications:
+  email: false
+node_js:
+  - '0.10'
+before_install:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - npm install -qg bower grunt-cli
+  - npm install -q
+  - bower install
+before_script:
+  - npm prune
+script:
+  - npm run ci
+after_success:
+  - npm run report-coverage
