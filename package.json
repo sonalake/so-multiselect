@@ -4,6 +4,7 @@
   "description": "AngularJS module for a multi-select dropdown list using checkboxes",
   "main": "'dist/so-multiselect.min.js'",
   "scripts": {
+    "install": "./node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update",
     "test": "grunt test",
     "ci": "grunt ci",
     "report-coverage": "cat ./coverage/lcov.info | codecov"
