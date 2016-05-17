@@ -120,9 +120,9 @@ module.exports = function(grunt) {
 				options: {
 					configFile: 'test/e2e.conf.js', // Target-specific config file
 					args: {
-						baseUrl : "http://localhost:<%= connect.test.options.port%>",
+						baseUrl : 'http://localhost:<%= connect.test.options.port%>',
 						capabilities: {
-							browserName: "<%= connect.test.options.browserName%>",
+							browserName: '<%= connect.test.options.browserName%>',
 						}
 
 					} // Target-specific arguments
@@ -132,9 +132,9 @@ module.exports = function(grunt) {
 				options: {
 					configFile: 'test/e2e.conf.js', // Target-specific config file
 					args: {
-						baseUrl : "http://localhost:<%= connect.test.options.port%>",
+						baseUrl : 'http://localhost:<%= connect.test.options.port%>',
 						capabilities: {
-							browserName: "firefox",
+							browserName: 'firefox',
 						}
 
 					} // Target-specific arguments
