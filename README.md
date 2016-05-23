@@ -1,6 +1,6 @@
 so-multiselect [![Build Status](https://travis-ci.org/gordonmcg-sonalake/so-multiselect.svg?branch=master)](https://travis-ci.org/gordonmcg-sonalake/so-multiselect) [![codecov coverage](https://img.shields.io/codecov/c/github/gordonmcg-sonalake/so-multiselect.svg?style=flat-square)](https://codecov.io/github/gordonmcg-sonalake/so-multiselect) [![MIT License](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)]()
 ================
-> Angular module that provides a multi-select dropdown list using checkboxes.
+> Angular module that provides a multi-select dropdown list with checkboxes.
 
 ![so-multiselect](other/example.png)
 
@@ -12,6 +12,13 @@ The required dependencies are:
 * [AngularJS](http://angular.org) (tested with version 1.2.28+)
 
 This module was built with the intention of using it alongside [UI Bootstrap](https://github.com/angular-ui/bootstrap).
+
+Demo
+-----
+
+For an example of `so-multiselect` in action, take a look at the demo app inside src/demo.
+
+Alternatively, you can find the same [example on plunker.](https://plnkr.co/edit/E3E5KpHdwemNaoXtWimB?p=preview)
 
 Getting Started
 ---------------
@@ -44,31 +51,31 @@ Set up your models in your controller:
 
 ```javascript
 
-$scope.things = [{
-	key: 't1',
-	name: 'Thing 1'
+$scope.flavours = [{
+	key: 'f1',
+	name: 'Strawberry'
 }, {
-	key: 't2',
-	name: 'Thing 2'
+	key: 'f2',
+	name: 'Classico'
 }, {
-	key: 't3',
-	name: 'Thing 3'
+	key: 'f3',
+	name: 'Mint'
 }];
 
-$scope.selectedItems = [];
+$scope.chosenFlavours = [];
 
-$scope.onThingsSelected = function(selectedItems) {
-	$scope.selectedItems = selectedItems;
+$scope.onFlavourSelected = function(selectedItems) {
+	$scope.chosenFlavours = selectedItems;
 };
 ```
 
 Apply the directive to your HTML:
 
 ```html
-<div so-multiselect items="things" name="Thing" on-selected="onThingsSelected(selectedItems)" button-class="btn-grey"></div>
+<div so-multiselect items="flavourList" name="Flavours" on-selected="onFlavourSelected(selectedItems)" button-class="btn-grey"></div>
 ```
 
-* `items` takes a reference to the array of object to appear in the dropdown list, each object containing a `key` and `name`.
+* `items` takes a reference to the array of object to appear in the dropdown list; each object must contain `key` and `name` attributes.
 * `name` is the value for the label that appears inside the trigger for the dropdown list.
 * `on-selected` takes a reference to the callback function you want to execute when an item is selected in the list. The `selectedItems` parameter contains an array of the selected objects.
 * `button-class` is an optional attirbute if you wish to add any extra CSS classes to the trigger for the dropdown list.

@@ -3,25 +3,25 @@ angular.module('demo', [
 ])
 
 .controller('DemoCtrl', ['$scope', function ($scope) {
-	// the selector config
-	$scope.things = [{
-		key: 't1',
-		name: 'Thing 1'
+	$scope.flavourList = [{
+		key: 'f1',
+		name: 'Strawberry'
 	}, {
-		key: 't2',
-		name: 'Thing 2'
+		key: 'f2',
+		name: 'Classico'
 	}, {
-		key: 't3',
-		name: 'Thing 3'
+		key: 'f3',
+		name: 'Mint'
 	}];
 
-	$scope.items = [];
+	$scope.chosenFlavours = [];
 
-	$scope.onThingsSelected = function(selectedItem) {
-		$scope.items = selectedItem;
+	$scope.onFlavourSelected = function(selectedItem) {
+		$scope.chosenFlavours = selectedItem;
 	};
 
 
+	// relates to tabs and example code
 	$scope.demo1 = {
 		markup: true,
 		javascript: false

@@ -46,6 +46,14 @@
 			.btn-grey:focus, .btn-grey:active:focus {
 				outline: 0;
 			}
+			
+			/**
+			 * overwriting the default max-width so that we can see more
+			 * of the value names.
+			 */
+			.multiselect-container .filter-wrap .filter-values {
+				max-width: 120px;
+			}
 		</style>
 	</head>
 	<body ng-app="demo" id="ng-app">
@@ -57,13 +65,20 @@
 			<h3>Basic Demo</h3>
 			<p>This is a basic demo set up. It gives a quick example of how to use so-multiselect.</p>
 			<div class="row">
-				<div class="col-xs-12">
+				<div class="col-xs-6">
 					<ul class="nav navbar-nav">
 						<li>
-							<div so-multiselect items="things" name="Thing" on-selected="onThingsSelected(selectedItems)" button-class="btn-grey"></div>
+							<div so-multiselect items="flavourList" name="Flavours" on-selected="onFlavourSelected(selectedItems)" button-class="btn-grey"></div>
 						</li>
-						<li><p class="navbar-text">Items selected: <strong>{{items.length}}</strong></p></li>
 					</ul>
+				</div>
+				<div class="col-xs-6">
+				  <p>Chosen Flavours: <strong>{{chosenFlavours.length}}</strong></p>
+				  <ul>
+				    <li ng-repeat="item in chosenFlavours">
+				      {{item.name}}
+				    </li>
+				  </ul>
 				</div>
 			</div>
 			<hr/>
@@ -84,31 +99,31 @@
 						<div class="tab-content">
 							<div class="tab-pane" ng-class="{'active':demo1.markup}" ng-show="demo1.markup">
 								<pre><code class="html" ng-non-bindable>&lt;div so-multiselect
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;items="things"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="Thing"
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;on-selected="onThingsSelected(selectedItems)"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;items="flavourList"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="Flavours"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;on-selected="onFlavourSelected(selectedItems)"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;button-class="btn-grey"
 &gt;&lt;/div&gt;
-&lt;p&gt;Items selected: &lt;strong&gt;{{items.length}}&lt;/strong&gt;&lt;/p&gt;</code></pre>
+&lt;p&gt;Chosen Flavours: &lt;strong&gt;{{chosenFlavours.length}}&lt;/strong&gt;&lt;/p&gt;</code></pre>
 							</div>
 							<div class="tab-pane" ng-class="{'active':demo1.javascript}" ng-show="demo1.javascript">
 								<pre><code class="javascript" ng-non-bindable>.controller('DemoCtrl', ['$scope', function ($scope) {
 &nbsp;&nbsp;&nbsp;&nbsp;// the selector config
-&nbsp;&nbsp;&nbsp;&nbsp;$scope.things = [{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key: 't1',
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: 'Thing 1'
+&nbsp;&nbsp;&nbsp;&nbsp;$scope.flavourList = [{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key: 'f1',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: 'Strawberry'
 &nbsp;&nbsp;&nbsp;&nbsp;}, {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key: 't2',
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: 'Thing 2'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key: 'f2',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: 'Classico'
 &nbsp;&nbsp;&nbsp;&nbsp;}, {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key: 't3',
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: 'Thing 3'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key: 'f3',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name: 'Mint'
 &nbsp;&nbsp;&nbsp;&nbsp;}];
 
-&nbsp;&nbsp;&nbsp;&nbsp;$scope.items = [];
+&nbsp;&nbsp;&nbsp;&nbsp;$scope.chosenFlavours = [];
 
-&nbsp;&nbsp;&nbsp;&nbsp;$scope.onThingsSelected = function(selectedItem) {
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$scope.items = selectedItem;
+&nbsp;&nbsp;&nbsp;&nbsp;$scope.onFlavourSelected = function(selectedItem) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$scope.chosenFlavours = selectedItem;
 &nbsp;&nbsp;&nbsp;&nbsp;};
 }])</code></pre>
 							</div>
