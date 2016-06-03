@@ -1,4 +1,4 @@
-so-multiselect [![Build Status](https://travis-ci.org/gordonmcg-sonalake/so-multiselect.svg?branch=master)](https://travis-ci.org/gordonmcg-sonalake/so-multiselect) [![codecov coverage](https://img.shields.io/codecov/c/github/gordonmcg-sonalake/so-multiselect.svg?style=flat-square)](https://codecov.io/github/gordonmcg-sonalake/so-multiselect) [![MIT License](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)]()
+so-multiselect [![Build Status](https://travis-ci.org/sonalake/so-multiselect.svg?branch=master)](https://travis-ci.org/sonalake/so-multiselect) [![codecov coverage](https://img.shields.io/codecov/c/github/sonalake/so-multiselect.svg?style=flat-square)](https://codecov.io/github/sonalake/so-multiselect) [![MIT License](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)]()
 ================
 > Angular module that provides a multi-select dropdown list with checkboxes.
 
@@ -28,7 +28,7 @@ Getting Started
 The easiest way to install the module is to use bower:
 
 ```
-bower install gordonmcg-sonalake/so-multiselect --save
+bower install sonalake/so-multiselect --save
 bower update
 ```
 
