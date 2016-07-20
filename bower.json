@@ -1,6 +1,6 @@
 {
   "name": "so-multiselect",
-  "version": "0.1",
+  "version": "1.0.0",
   "main": "dist/so-multiselect.js",
   "private": true,
   "dependencies": {
