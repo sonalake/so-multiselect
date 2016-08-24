@@ -32,8 +32,8 @@
   "resolutions": {
     "jquery": "~1.10.2"
   },
-  "main": {
+  "main": [
     "dist/so-multiselect.css",
     "dist/so-multiselect.js"
-  }
+  ]
 }
